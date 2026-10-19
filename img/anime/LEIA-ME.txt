@@ -1,0 +1,18 @@
+Imagens do anime 86 –Eighty Six–
+
+Origem: site oficial https://anime-86.com/ (key visuals, cenas dos episódios,
+personagens e mechas), baixadas e convertidas para WebP.
+© Asato Asato/KADOKAWA/Project-86. O crédito aparece no rodapé do site.
+
+Onde cada arquivo é usado:
+  hero.webp          fundo do topo da página (key visual da 1ª parte)
+  interlude.webp     faixa entre "Ficha" e "Missões" (key visual da 2ª parte)
+  film-01..10.webp   faixa de cenas em movimento, entre "Missões" e "Operações"
+  proto-1..4.webp    fundo dos 4 cartões de "Protocolo"
+  invest.webp        card da missão Invest System
+  techfix.webp       card da missão TechFix (Juggernaut)
+  char-*.webp        seção "Esquadrão Spearhead"
+  contato.webp       fundo da seção de contato (Lena)
+
+Para trocar uma imagem, substitua o arquivo mantendo o mesmo nome.
+hero e interlude são opcionais: sem eles, essas áreas não aparecem.
