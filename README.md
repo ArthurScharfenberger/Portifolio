@@ -7,7 +7,3 @@ Portfólio profissional de desenvolvimento Full-Stack & Inteligência Artificial
 - HTML5 / CSS3 / JavaScript moderno
 - GSAP & ScrollTrigger / Lenis Smooth Scroll
 - Design Responsivo e Temas Claro / Escuro
-
-## 🌐 Deploy
-
-Projeto configurado para hospedagem direta na [Vercel](https://vercel.com).
