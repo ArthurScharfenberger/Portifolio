@@ -205,21 +205,6 @@ section{padding:clamp(72px,12vh,128px) 0;position:relative}
 .finale-q em{font-style:normal;color:var(--accent)}
 .finale-s{font-size:12px;letter-spacing:.16em;color:var(--muted);margin-bottom:34px}
 .finale-s b{color:var(--accent);font-weight:500}
-.ops ul{list-style:none;border-top:1px solid var(--line)}
-.ops li{position:relative;border-bottom:1px solid var(--line);overflow:hidden}
-.ops li::before{content:"";position:absolute;inset:0;background:var(--surface-2);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.7,0,.2,1)}
-.ops li:hover::before{transform:scaleX(1)}
-.ops a{position:relative;display:grid;grid-template-columns:56px 1fr auto 24px;align-items:center;gap:16px;padding:20px 8px;transition:padding .45s cubic-bezier(.7,0,.2,1)}
-.ops li:hover a{padding-left:20px}
-.ops .n{font:500 12px "IBM Plex Mono",monospace;color:var(--steel)}
-.ops h4{font:600 clamp(1.1rem,2vw,1.45rem) "Chakra Petch",sans-serif;letter-spacing:.02em}
-.ops .t{font:500 12px "IBM Plex Mono",monospace;color:var(--muted)}
-.ops .ar{transition:transform .4s;color:var(--muted)}
-.ops li:hover .ar{transform:translateX(4px) rotate(-45deg);color:var(--accent)}
-.preview{position:fixed;top:0;left:0;width:260px;aspect-ratio:16/10;pointer-events:none;z-index:40;overflow:hidden;scale:0;opacity:0;border:1px solid var(--line)}
-.preview .pv{position:absolute;inset:0;background:var(--g);transition:background .3s}
-@media (hover:none){.preview{display:none}}
-@media (max-width:600px){.ops a{grid-template-columns:36px 1fr 20px}.ops .t{display:none}}
 
 /* protocolo (cartões empilhados) */
 .stack{display:flex;flex-direction:column;gap:24px}
@@ -284,14 +269,15 @@ footer .credit[hidden]{display:none}
 .roster{position:relative;display:flex;justify-content:center;align-items:flex-end;padding:20px clamp(16px,4vw,40px) 0;height:clamp(300px,36vw,500px)}
 .roster::before{content:"";position:absolute;left:50%;bottom:0;width:min(1100px,96vw);height:70%;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 100%,color-mix(in srgb,var(--accent) 28%,transparent),transparent 65%);pointer-events:none}
 .roster::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line)}
-.uc{position:relative;flex:none;height:100%;margin:0 -1.2%;display:flex;align-items:flex-end;transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1);cursor:none}
-.uc img{height:92%;width:auto;max-width:none;filter:drop-shadow(0 10px 20px rgba(0,0,0,.45))}
+.uc{position:relative;flex:none;height:100%;margin:0 -1.2%;display:flex;align-items:flex-end;cursor:none}
+.uc img{height:92%;width:auto;max-width:none;transition:opacity .4s,translate .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 10px 20px rgba(0,0,0,.45))}
 .uc.lena img{height:84%;filter:drop-shadow(0 0 18px color-mix(in srgb,var(--steel) 55%,transparent))}
 .uc figcaption{position:absolute;left:50%;top:2%;transform:translate(-50%,8px);opacity:0;transition:opacity .3s,transform .3s;text-align:center;white-space:nowrap;pointer-events:none;z-index:2}
 .uc figcaption span{display:block;font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--steel)}
 .uc figcaption b{font:600 15px "Chakra Petch",sans-serif}
-.roster:hover .uc:not(:hover){opacity:.4}
-.uc:hover{transform:translateY(-10px);z-index:3}
+.roster:hover .uc:not(:hover) img{opacity:.4}
+.uc:hover{z-index:3}
+.uc:hover img{translate:0 -10px}
 .uc:hover figcaption{opacity:1;transform:translate(-50%,0)}
 @media (max-width:820px){.roster{justify-content:flex-start;overflow-x:auto;height:340px;scroll-snap-type:x mandatory}.uc{margin:0 4px;scroll-snap-align:center;flex:none}.uc figcaption{opacity:1;transform:translate(-50%,0);top:0}.uc figcaption b{display:none}.uc figcaption span{font-size:9px;letter-spacing:.08em}}
 
@@ -301,8 +287,8 @@ footer .credit[hidden]{display:none}
 
 /* ===== destaques: sites no ar ===== */
 .featured .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.4vw,28px)}
-.fcard{position:relative;display:block;background:var(--surface);border:1px solid var(--line);padding:12px;transition:border-color .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
-.fcard:hover{border-color:var(--accent);transform:translateY(-4px)}
+.fcard{position:relative;display:block;background:var(--surface);border:1px solid var(--line);padding:12px;transition:border-color .35s,translate .45s cubic-bezier(.2,.8,.2,1)}
+.fcard:hover{border-color:var(--accent);translate:0 -4px}
 .fcard .bar{display:flex;justify-content:space-between;align-items:center;font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--muted);padding:2px 2px 10px}
 .st{display:inline-flex;align-items:center;gap:6px}
 .st i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
@@ -446,14 +432,6 @@ position:absolute;top:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);width:46px
 
 <div class="film" aria-label="Cenas do anime 86"><div class="film-track" id="film"></div></div>
 
-<section class="ops republic">
-  <span class="stamp-r" aria-hidden="true">REPÚBLICA DE SAN MAGNOLIA<br>PRIMEIRO SETOR · ZONA SEGURA</span>
-  <div class="wrap">
-    <div class="sec-head"><div><span class="tag">Operações secundárias <span class="kana" lang="ja">作戦</span></span><h2>Outros <em>projetos</em></h2></div></div>
-    <ul id="opsList"></ul>
-  </div>
-</section>
-<div class="preview" id="preview"><div class="pv"></div></div>
 
 <section id="protocolo">
   <div class="wrap">
@@ -549,17 +527,11 @@ const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
 /* ---------------- dados (do GitHub) ---------------- */
-const GH = 'https://github.com/ArthurScharfenberger/';
 const featured = [
   {t:'Guido Café & Co.', c:'Cafeteria · Canoas, RS', url:'https://guido-cafe.vercel.app', img:'img/destaques/guido.webp', d:'Microtorrefação e cafeteria: identidade editorial em azul, tipografia serifada e um tom de conversa que convida a ficar.'},
   {t:'Corujões', c:'Atlética · ULBRA', url:'https://corujoes-site.vercel.app', img:'img/destaques/corujoes.webp', d:'Site da atlética A.A.S.U.C.: mascote em destaque, faixas em movimento, modalidades, loja e chamada para entrar no bando.'},
   {t:'Vacafé', c:'Armazém & gastrobar · Esteio, RS', url:'https://va-cafe.vercel.app', img:'img/destaques/vacafe.webp', d:'Hero editorial em verde-sálvia com foto em tela cheia, cardápio, momentos e onde encontrar a casa.'},
   {t:'Café da Esquina', c:'Cafeteria', url:'https://site-cafe-da-esquina.vercel.app', img:'img/destaques/cafe-esquina.webp', d:'Cafeteria de esquina com toque artesanal: foto de ambiente, sobre, cardápio e contato.'},
-];
-const ops = [
-  {t:'Bot WhatsApp', y:'Node.js · 2025', g:'linear-gradient(135deg,#3d5a78,#0b1420)', href:GH+'bot-whatsapp'},
-  {t:'Site Primuss', y:'Next.js · 2025', g:'linear-gradient(135deg,#5b6448,#151812)', href:GH+'Primuss-site'},
-  {t:'Dashboard de Vendas', y:'Power BI · 2025', g:'linear-gradient(135deg,#6b1a26,#160609)', href:GH+'TrabalhoDashboardBI'},
 ];
 
 /* ---------------- montar DOM ---------------- */
@@ -570,7 +542,6 @@ $('#fgrid').innerHTML = featured.map((f, i) => `<a class="fcard" href="${f.url}"
     <div class="shot-f"><img src="${f.img}" alt="Página inicial do site ${f.t}" loading="lazy" decoding="async" width="1440" height="900"></div>
     <div class="meta"><div><h3>${f.t}</h3><span class="cat">${f.c}</span><p>${f.d}</p></div><span class="go">Ver site ↗</span></div>
   </a>`).join('');
-$('#opsList').innerHTML = ops.map((o, i) => `<li data-g="${o.g}"><a href="${o.href}" target="_blank" rel="noopener"><span class="n">OP-${String(i + 1).padStart(2, '0')}</span><h4>${o.t}</h4><span class="t">${o.y}</span><span class="ar">→</span></a></li>`).join('');
 $('#marquee').innerHTML = '<span>Setor 86 <b>✦</b> Full-Stack <b>✦</b> Inteligência Artificial <b>✦</b> Produtos reais <b>✦</b> Para-RAID online <b>✦</b> </span>'.repeat(6);
 
 function splitChars(el){
@@ -775,8 +746,7 @@ $$('.sec-head').forEach(h => gsap.from(h.children, { y: 24, opacity: 0, duration
 $$('.contact .split').forEach(line => gsap.from($$('.char', line), { yPercent: 110, duration: .9, ease: 'expo.out', stagger: .02, scrollTrigger: { trigger: line, start: 'top 88%' } }));
 gsap.from('.pill', { y: 20, opacity: 0, stagger: .03, duration: .6, ease: 'back.out(1.7)', scrollTrigger: { trigger: '.pills', start: 'top 88%' } });
 gsap.from('.radar', { scale: 0, duration: 1, ease: 'elastic.out(1,.55)', scrollTrigger: { trigger: '.radar', start: 'top 92%' } });
-gsap.from('.fcard', { y: 40, opacity: 0, duration: .8, ease: 'power3.out', stagger: .1, scrollTrigger: { trigger: '#fgrid', start: 'top 85%' } });
-gsap.from('.ops li', { opacity: 0, y: 16, stagger: .07, duration: .6, ease: 'power3.out', scrollTrigger: { trigger: '#opsList', start: 'top 85%' } });
+gsap.from('.fcard', { y: 40, opacity: 0, duration: .8, ease: 'power3.out', stagger: .1, clearProps: 'opacity,transform', scrollTrigger: { trigger: '#fgrid', start: 'top 85%' } });
 
 const scards = $$('.scard');
 scards.forEach((c, i) => {
@@ -788,29 +758,6 @@ scards.forEach((c, i) => {
   gsap.timeline({ scrollTrigger: st }).to(c, { scale: .94, ease: 'none' }, 0).to(dim, { opacity: .5, ease: 'none' }, 0);
 });
 
-(() => { // prévia que segue o cursor
-  const pv = $('#preview'), inner = $('.pv', pv);
-  const xT = gsap.quickTo(pv, 'x', { duration: .35, ease: 'power3' }), yT = gsap.quickTo(pv, 'y', { duration: .35, ease: 'power3' });
-  const list = $('#opsList');
-  let px = -1, py = -1, shown = false, current = null;
-  // decide pelo que está de fato sob o cursor: rolar com a roda (sem mexer o mouse)
-  // não dispara pointerleave, e a prévia ficava presa na tela
-  const sync = () => {
-    const hit = px < 0 ? null : document.elementFromPoint(px, py);
-    const li = hit && hit.closest('#opsList li');
-    if (li && li !== current){ current = li; inner.style.setProperty('--g', li.dataset.g); }
-    if (!!li !== shown){
-      shown = !!li;
-      gsap.to(pv, shown ? { scale: 1, opacity: 1, duration: .3, ease: 'power3.out', overwrite: true } : { scale: 0, opacity: 0, duration: .2, ease: 'power3.in', overwrite: true });
-    }
-    if (!li) current = null;
-  };
-  addEventListener('pointermove', e => { px = e.clientX; py = e.clientY; xT(px + 24); yT(py - 80); sync(); }, { passive: true });
-  addEventListener('scroll', sync, { passive: true });
-  if (lenis) lenis.on('scroll', sync);
-  document.addEventListener('pointerleave', () => { px = -1; sync(); });
-  list.addEventListener('pointerleave', () => setTimeout(sync));
-})();
 
 
 /* ---------------- tema: Setor 86 ↔ República ---------------- */
@@ -860,7 +807,7 @@ $('#themeBtn').addEventListener('click', e => {
   const roster = $('#roster');
   roster.innerHTML = squad.map(([id, name, cs]) => `<figure class="uc ${id}"><img src="img/anime/char-${id}.webp" alt="${name}" decoding="async"><figcaption><span>${cs}</span><b>${name}</b></figcaption></figure>`).join('');
   const units = $$('.uc', roster);
-  gsap.from(units, { yPercent: 35, opacity: 0, duration: 1, ease: 'power3.out', stagger: { each: .08, from: 'center' }, scrollTrigger: { trigger: roster, start: 'top 85%' } });
+  gsap.from(units, { yPercent: 35, opacity: 0, duration: 1, ease: 'power3.out', stagger: { each: .08, from: 'center' }, clearProps: 'opacity,transform', scrollTrigger: { trigger: roster, start: 'top 85%' } });
   // leve parallax de profundidade com o mouse (os do centro mexem menos)
   if (matchMedia('(hover:hover)').matches && !RM){
     const movers = units.map((u, i) => ({ x: gsap.quickTo($('img', u), 'x', { duration: .6, ease: 'power3' }), k: 6 + Math.abs(i - 3) * 4 }));
