@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&text=エイティシックスプロセッサーミッション作戦トコル兵装スピアヘッド通信終了トランス&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&text=エイティシックスプロセッサーミッション作戦トコル兵装スピアヘッド通信終了トランス注目&display=swap" rel="stylesheet">
 <style>
 /* ===== Tema "Setor 86" (escuro) e "República" (claro) ===== */
 :root{
@@ -59,7 +59,7 @@ img{display:block;max-width:100%}
 /* ===== nav ===== */
 .progress{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);z-index:60}
 nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
-nav.solid{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);border-color:var(--line)}
+nav.solid{background:color-mix(in srgb,var(--bg) 94%,transparent);border-color:var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
 .logo{font:700 15px "Chakra Petch",sans-serif;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
 .logo i{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid var(--accent);color:var(--accent);font-style:normal;font-size:12px}
@@ -69,8 +69,9 @@ nav ul a span{color:var(--steel);margin-right:6px}
 nav ul a:hover{color:var(--fg)}
 .nav-r{display:flex;align-items:center;gap:14px}
 .status{font:500 11px "IBM Plex Mono",monospace;color:var(--muted);display:flex;align-items:center;gap:8px;letter-spacing:.08em}
-.status i{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:ping 2.4s infinite}
-@keyframes ping{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.status i{position:relative;width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.status i::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--ok);animation:ping 2.4s ease-out infinite}
+@keyframes ping{from{transform:scale(1);opacity:.6}to{transform:scale(3);opacity:0}}
 .theme-btn{height:34px;padding:0 12px;border:1px solid var(--line);font:500 11px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;transition:border-color .3s}
 .theme-btn:hover{border-color:var(--fg)}
 @media (max-width:820px){nav ul,.status{display:none}}
@@ -85,19 +86,19 @@ nav ul a:hover{color:var(--fg)}
 @media (max-width:820px){.hero-art{left:0;-webkit-mask-image:linear-gradient(transparent,#000 30%,transparent 85%);mask-image:linear-gradient(transparent,#000 30%,transparent 85%)}.hero-art.on{opacity:.35}}
 .interlude{position:relative;height:70vh;min-height:380px;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 56px}
 .interlude[hidden]{display:none}
-.il-img{position:absolute;inset:-12% 0;background:var(--art) center/cover no-repeat}
+.il-img{will-change:transform;position:absolute;inset:-12% 0;background:var(--art) center/cover no-repeat}
 .interlude::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 12%,color-mix(in srgb,var(--bg) 55%,transparent) 38%,transparent 65%),linear-gradient(to bottom,var(--bg),transparent 25%)}
 .il-txt .tag{color:var(--fg)}
 .il-txt{position:relative;z-index:1;width:100%}
 .il-txt p{font:700 clamp(1.6rem,3.4vw,2.6rem)/1.15 "Chakra Petch",sans-serif;margin-top:12px;max-width:22ch}
-.ghost86{position:absolute;right:-2vw;bottom:-6vw;font:700 clamp(220px,38vw,560px)/.8 "Chakra Petch",sans-serif;color:transparent;-webkit-text-stroke:1px var(--line);letter-spacing:-.04em;pointer-events:none;user-select:none}
+.ghost86{will-change:transform;position:absolute;right:-2vw;bottom:-6vw;font:700 clamp(220px,38vw,560px)/.8 "Chakra Petch",sans-serif;color:transparent;-webkit-text-stroke:1px var(--line);letter-spacing:-.04em;pointer-events:none;user-select:none}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,80px);align-items:center;width:100%}
 .tag{display:inline-flex;align-items:center;gap:10px;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .tag::before{content:"";width:22px;height:1px;background:var(--steel)}
 .hero h1{font:700 clamp(2.2rem,4.6vw,3.9rem)/1.02 "Chakra Petch",sans-serif;letter-spacing:-.01em;margin:18px 0 20px}
 .hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
 .hero h1 em{font-style:normal;color:var(--accent)}
-.char{display:inline-block;will-change:transform}
+.char{display:inline-block}
 .role{font:500 15px/24px "IBM Plex Mono",monospace;color:var(--muted);height:24px;white-space:nowrap;overflow:hidden}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .role b{color:var(--fg);font-weight:500}
@@ -117,9 +118,9 @@ nav ul a:hover{color:var(--fg)}
 .frame{position:relative;aspect-ratio:1;background:var(--surface);overflow:hidden;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
 .frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(.55) contrast(1.05);transition:filter .6s,transform .8s cubic-bezier(.2,.8,.2,1)}
 .unit:hover .frame img{filter:grayscale(0);transform:scale(1.04)}
-.frame::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);mix-blend-mode:multiply;pointer-events:none}
-.scan{position:absolute;left:0;right:0;height:30%;top:-30%;background:linear-gradient(transparent,rgba(209,32,58,.18),transparent);animation:scan 4.5s linear infinite;pointer-events:none}
-@keyframes scan{to{top:100%}}
+.frame::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px);pointer-events:none}
+.scan{position:absolute;left:0;right:0;height:30%;top:0;background:linear-gradient(transparent,rgba(209,32,58,.18),transparent);animation:scan 4.5s linear infinite;pointer-events:none;will-change:transform}
+@keyframes scan{from{transform:translateY(-100%)}to{transform:translateY(334%)}}
 .corner{position:absolute;width:16px;height:16px;border:1.5px solid var(--accent);z-index:2}
 .corner.tl{top:-7px;left:-7px;border-right:0;border-bottom:0}
 .corner.br{bottom:-7px;right:-7px;border-left:0;border-top:0}
@@ -164,37 +165,6 @@ section{padding:clamp(72px,12vh,128px) 0;position:relative}
 .stat span{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
 @media (max-width:820px){.ficha{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}}
 
-/* missões (rolagem horizontal) */
-.h-wrap{overflow:hidden}
-@media (min-width:821px){
-  .work{height:100vh;min-height:620px;padding:88px 0 32px;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
-  .work > .wrap{width:100%}
-  .work .sec-head{margin-bottom:28px}
-  .work .proj{width:min(46vw,540px,calc((100vh - 330px) * 1.45))}
-}
-.h-track{display:flex;gap:28px;padding-left:max(clamp(16px,4vw,40px),calc((100vw - 1200px)/2 + 40px));will-change:transform}
-/* margem final: o padding-right de um flex não entra no scrollWidth, então usamos um espaçador */
-.h-track::after{content:"";flex:0 0 max(1px,calc((100vw - 1200px)/2 + 12px))}
-.proj{flex:0 0 auto;width:min(46vw,540px);perspective:1100px}
-.proj .card{position:relative;transform-style:preserve-3d;background:var(--surface);border:1px solid var(--line);padding:12px}
-.proj .bar{display:flex;justify-content:space-between;align-items:center;font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--muted);padding:2px 2px 10px}
-.st{display:inline-flex;align-items:center;gap:6px}
-.st i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
-.st.code i{background:var(--steel)}
-.st.off i{background:var(--warn)}
-.proj .media{position:relative;aspect-ratio:16/10;overflow:hidden;clip-path:inset(10% 10% 10% 10%)}
-.proj .img{position:absolute;inset:-6%;background:var(--g)}
-.proj .img img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.proj .media::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 1px,transparent 1px 3px);pointer-events:none}
-.proj .glyph{position:absolute;inset:0;display:grid;place-items:center;font:700 88px "Chakra Petch",sans-serif;color:rgba(255,255,255,.18);letter-spacing:-.02em}
-.proj .glare{position:absolute;inset:0;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.22),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
-.proj .card:hover .glare{opacity:1}
-.proj .meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 2px 2px}
-.proj .meta h3{font:600 1.25rem "Chakra Petch",sans-serif;letter-spacing:.02em}
-.proj .meta span{font-size:13px;color:var(--muted)}
-.proj .corner{width:12px;height:12px;border-color:var(--steel);opacity:.7}
-.proj .corner.tl{top:-5px;left:-5px}.proj .corner.br{bottom:-5px;right:-5px}
-@media (max-width:820px){.h-track{flex-direction:column;padding:0 16px}.h-track::after{display:none}.proj{width:100%}}
 
 /* operações secundárias */
 /* seção "República": paleta clara só aqui dentro, com cortes diagonais (ecoam os cantos chanfrados) */
@@ -207,21 +177,21 @@ section{padding:clamp(72px,12vh,128px) 0;position:relative}
 @media (max-width:820px){.republic .stamp-r{display:none}}
 /* textura de cena: grão de filme + linhas de varredura por cima de tudo (menos cursor e loader) */
 .fx-grain,.fx-scan{position:fixed;pointer-events:none;z-index:70}
-.fx-grain{inset:-8%;opacity:.09;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain .9s steps(5) infinite}
-.fx-scan{inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 3px)}
-:root[data-theme="light"] .fx-grain{opacity:.06}
+.fx-grain{inset:0;opacity:.045;transform:translateZ(0);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.fx-scan{inset:0;transform:translateZ(0);background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 3px)}
+:root[data-theme="light"] .fx-grain{opacity:.035}
 :root[data-theme="light"] .fx-scan{opacity:.5}
-@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,1%)}100%{transform:translate(0,0)}}
 /* katakana nos rótulos */
 .kana{font:500 11px "Noto Sans JP","Yu Gothic UI","Hiragino Sans",sans-serif;letter-spacing:.18em;color:var(--steel);opacity:.75;text-transform:none;margin-left:4px}
 
 /* divisores de HUD entre seções */
 .hud{padding:22px 0}
 .hud-in{display:flex;align-items:center;gap:16px;font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--muted);white-space:nowrap}
-.hud-line{position:relative;flex:1;height:1px;background:var(--line);transform-origin:left}
+.hud-line{position:relative;flex:1;height:1px;background:var(--line);transform-origin:left;overflow:visible}
 .hud-line::before{content:"";position:absolute;inset:0;width:18%;background:var(--steel)}
-.hud-line::after{content:"";position:absolute;top:-2px;left:0;width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:blip 5s linear infinite}
-@keyframes blip{from{left:0}to{left:calc(100% - 5px)}}
+.hud-line::after{content:"";position:absolute;top:-2px;left:0;width:100%;height:5px;background:radial-gradient(circle at calc(100% - 2.5px) 50%,var(--accent) 2.5px,transparent 3px);animation:blip 5s linear infinite;will-change:transform}
+@keyframes blip{from{transform:translateX(calc(-100% + 5px))}to{transform:translateX(0)}}
+.hud{overflow:hidden}
 .hud-r b{color:var(--fg);font-weight:500}
 @media (max-width:700px){.hud-r{display:none}}
 
@@ -303,7 +273,8 @@ footer .credit[hidden]{display:none}
 
 /* ===== protocolo com cena de fundo ===== */
 .scard{overflow:hidden}
-.scard > :not(.sbg){position:relative;z-index:1}
+.scard > :not(.sbg):not(.dim){position:relative;z-index:1}
+.scard .dim{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;z-index:2}
 .sbg{position:absolute;inset:0 0 0 38%;background:var(--art) center/cover no-repeat;opacity:.5;-webkit-mask-image:linear-gradient(90deg,transparent,#000 55%);mask-image:linear-gradient(90deg,transparent,#000 55%);transition:transform 1s cubic-bezier(.2,.8,.2,1),opacity .5s}
 .scard:hover .sbg{transform:scale(1.05);opacity:.7}
 @media (max-width:600px){.sbg{inset:0;opacity:.22;-webkit-mask-image:none;mask-image:none}}
@@ -313,36 +284,47 @@ footer .credit[hidden]{display:none}
 .roster{position:relative;display:flex;justify-content:center;align-items:flex-end;padding:20px clamp(16px,4vw,40px) 0;height:clamp(300px,36vw,500px)}
 .roster::before{content:"";position:absolute;left:50%;bottom:0;width:min(1100px,96vw);height:70%;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 100%,color-mix(in srgb,var(--accent) 28%,transparent),transparent 65%);pointer-events:none}
 .roster::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line)}
-.uc{position:relative;flex:none;height:100%;margin:0 -1.2%;display:flex;align-items:flex-end;transition:filter .4s,transform .5s cubic-bezier(.2,.8,.2,1);cursor:none}
+.uc{position:relative;flex:none;height:100%;margin:0 -1.2%;display:flex;align-items:flex-end;transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1);cursor:none}
 .uc img{height:92%;width:auto;max-width:none;filter:drop-shadow(0 10px 20px rgba(0,0,0,.45))}
 .uc.lena img{height:84%;filter:drop-shadow(0 0 18px color-mix(in srgb,var(--steel) 55%,transparent))}
 .uc figcaption{position:absolute;left:50%;top:2%;transform:translate(-50%,8px);opacity:0;transition:opacity .3s,transform .3s;text-align:center;white-space:nowrap;pointer-events:none;z-index:2}
 .uc figcaption span{display:block;font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--steel)}
 .uc figcaption b{font:600 15px "Chakra Petch",sans-serif}
-.roster:hover .uc:not(:hover){filter:brightness(.4) grayscale(.6)}
+.roster:hover .uc:not(:hover){opacity:.4}
 .uc:hover{transform:translateY(-10px);z-index:3}
 .uc:hover figcaption{opacity:1;transform:translate(-50%,0)}
 @media (max-width:820px){.roster{justify-content:flex-start;overflow-x:auto;height:340px;scroll-snap-type:x mandatory}.uc{margin:0 4px;scroll-snap-align:center;flex:none}.uc figcaption{opacity:1;transform:translate(-50%,0);top:0}.uc figcaption b{display:none}.uc figcaption span{font-size:9px;letter-spacing:.08em}}
 
 /* ===== contato com a Lena ao fundo ===== */
-.contact-art{position:absolute;inset:0;background:url("img/anime/contato.webp") center 30%/cover no-repeat;opacity:.22;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,#000 30%,transparent 80%);pointer-events:none}
+.contact-art{will-change:transform;position:absolute;inset:0;background:url("img/anime/contato.webp") center 30%/cover no-repeat;opacity:.22;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,#000 30%,transparent 80%);pointer-events:none}
 .contact > .wrap{position:relative}
 
-/* briefing (overlay do projeto) */
-#overlay{position:fixed;z-index:80;background:var(--g);display:none;overflow:hidden}
-#overlay .inner{position:absolute;inset:0;display:flex;flex-direction:column;padding:clamp(20px,5vw,64px);color:#fff;overflow-y:auto}
-#overlay .ov-top{margin-top:auto;font:500 11px "IBM Plex Mono",monospace;letter-spacing:.14em;opacity:0}
-#overlay .ov-top b{font-weight:500;color:#8fd47a}
-#overlay .ov-top b.off{color:#f0b54a}
-#overlay .ov-top b.code{color:#b9cbdb}
-#overlay h2{font:700 clamp(2.2rem,6vw,4.6rem)/1 "Chakra Petch",sans-serif;margin:12px 0 0;overflow:hidden;flex:none}
-#overlay h2 .c{display:inline-block}
-#overlay .ov-stack{font:500 13px "IBM Plex Mono",monospace;color:rgba(255,255,255,.7);margin-top:12px;opacity:0}
-#overlay p{max-width:56ch;margin-top:14px;font-size:16px;line-height:1.6;opacity:0;color:rgba(255,255,255,.88)}
-#overlay .ov-links{display:flex;gap:10px;margin-top:24px;opacity:0;flex-wrap:wrap}
-#overlay .ov-links a{height:44px;display:inline-flex;align-items:center;padding:0 18px;border:1px solid rgba(255,255,255,.5);font:600 12px "Chakra Petch",sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:background .3s,color .3s}
-#overlay .ov-links a:hover{background:#fff;color:#111}
-#overlay .close{position:absolute;top:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);width:46px;height:46px;border:1px solid rgba(255,255,255,.6);color:#fff;font-size:20px;opacity:0;scale:0;z-index:2}
+/* ===== destaques: sites no ar ===== */
+.featured .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.4vw,28px)}
+.fcard{position:relative;display:block;background:var(--surface);border:1px solid var(--line);padding:12px;transition:border-color .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.fcard:hover{border-color:var(--accent);transform:translateY(-4px)}
+.fcard .bar{display:flex;justify-content:space-between;align-items:center;font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--muted);padding:2px 2px 10px}
+.st{display:inline-flex;align-items:center;gap:6px}
+.st i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.fcard .bar b{color:var(--accent);font-weight:500}
+.fcard .chrome{display:flex;align-items:center;gap:6px;height:26px;padding:0 10px;background:var(--surface-2);border:1px solid var(--line);border-bottom:0}
+.fcard .chrome i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.fcard .chrome span{margin-left:8px;font:500 11px "IBM Plex Mono",monospace;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fcard .shot-f{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--surface-2)}
+.fcard .shot-f img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.fcard:hover .shot-f img{transform:scale(1.035)}
+.fcard .meta{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:16px 2px 4px}
+.fcard h3{font:600 1.35rem "Chakra Petch",sans-serif;letter-spacing:.02em}
+.fcard .cat{display:block;font:500 11px "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--steel);text-transform:uppercase;margin-top:2px}
+.fcard p{color:var(--muted);font-size:14px;margin-top:8px;max-width:48ch}
+.fcard .go{flex:none;font:600 12px "Chakra Petch",sans-serif;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--muted);transition:color .3s}
+.fcard:hover .go{color:var(--accent)}
+.fcard .corner{width:12px;height:12px;border-color:var(--accent);opacity:0;transition:opacity .3s}
+.fcard:hover .corner{opacity:1}
+.fcard .corner.tl{top:-5px;left:-5px}.fcard .corner.br{bottom:-5px;right:-5px}
+@media (max-width:820px){.featured .fgrid{grid-template-columns:1fr}.fcard .meta{flex-direction:column;align-items:flex-start}}
+
+position:absolute;top:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);width:46px;height:46px;border:1px solid rgba(255,255,255,.6);color:#fff;font-size:20px;opacity:0;scale:0;z-index:2}
 
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
@@ -368,8 +350,8 @@ footer .credit[hidden]{display:none}
   <div class="wrap">
     <a href="#top" class="logo" data-magnetic><i>86</i>ARTHUR.S</a>
     <ul>
-      <li><a href="#ficha"><span>01</span>Ficha</a></li>
-      <li><a href="#missoes"><span>02</span>Missões</a></li>
+      <li><a href="#destaques"><span>01</span>Destaques</a></li>
+      <li><a href="#ficha"><span>02</span>Ficha</a></li>
       <li><a href="#protocolo"><span>03</span>Protocolo</a></li>
       <li><a href="#canal"><span>04</span>Canal</a></li>
     </ul>
@@ -394,7 +376,7 @@ footer .credit[hidden]{display:none}
       <div class="role">&gt; <b id="scramble">Desenvolvedor Full-Stack</b><span class="blink">_</span></div>
       <p class="lead">Estudante de TI em Sapucaia do Sul, RS. Do app desktop em Rust ao painel financeiro em tempo real, levo ideias até produção.</p>
       <div class="ctas">
-        <a href="#missoes" class="btn primary" data-magnetic>Ver missões →</a>
+        <a href="#destaques" class="btn primary" data-magnetic>Ver projetos →</a>
         <a href="#canal" class="btn" data-magnetic>Abrir canal</a>
       </div>
     </div>
@@ -417,9 +399,19 @@ footer .credit[hidden]{display:none}
 
 <div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
 
+<section class="featured" id="destaques">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="tag">01 — Destaques <span class="kana" lang="ja">注目</span></span><h2>Trabalhos em <em>destaque</em></h2></div>
+      <p>Sites que desenvolvi para negócios e organizações reais. Clique em um card para abrir o site ao vivo.</p>
+    </div>
+    <div class="fgrid" id="fgrid"></div>
+  </div>
+</section>
+
 <section id="ficha">
   <div class="wrap">
-    <div class="sec-head"><div><span class="tag">01 — Ficha do processador <span class="kana" lang="ja">プロセッサー</span></span><h2>Quem está no <em>comando</em></h2></div></div>
+    <div class="sec-head"><div><span class="tag">02 — Ficha do processador <span class="kana" lang="ja">プロセッサー</span></span><h2>Quem está no <em>comando</em></h2></div></div>
     <div class="ficha">
       <p class="about-text reveal-words">Sou estudante de TI e desenvolvedor full-stack. Construo produtos reais, de apps desktop em Rust a painéis financeiros em tempo real. Acredito que IA não substitui o dev: <em>amplifica</em> quem sabe usá-la.</p>
       <div class="dossier">
@@ -437,7 +429,7 @@ footer .credit[hidden]{display:none}
     </div>
     <div class="stats">
       <div class="stat"><b data-count="27">0</b><span>repositórios</span></div>
-      <div class="stat"><b data-count="5">0</b><span>projetos no ar</span></div>
+      <div class="stat"><b data-count="4">0</b><span>projetos no ar</span></div>
       <div class="stat"><b data-count="5">0</b><span>linguagens</span></div>
       <div class="stat"><b data-count="2020" data-from="2000">0</b><span>em serviço desde</span></div>
     </div>
@@ -451,15 +443,6 @@ footer .credit[hidden]{display:none}
   <div class="wrap il-txt"><span class="tag">Transmissão // Para-RAID <span class="kana" lang="ja">トランスミッション</span></span><p>Do campo de batalha ao deploy.</p></div>
 </section>
 
-<section class="work" id="missoes">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><span class="tag">02 — Registro de missões <span class="kana" lang="ja">ミッション</span></span><h2>Missões <em>concluídas</em></h2></div>
-      <p>Continue rolando para avançar. Clique em uma missão para abrir o briefing com stack e links.</p>
-    </div>
-  </div>
-  <div class="h-wrap"><div class="h-track" id="hTrack"></div></div>
-</section>
 
 <div class="film" aria-label="Cenas do anime 86"><div class="film-track" id="film"></div></div>
 
@@ -555,12 +538,6 @@ footer .credit[hidden]{display:none}
   </div>
 </footer>
 
-<div id="overlay" role="dialog" aria-modal="true" aria-label="Briefing do projeto">
-  <div class="inner" data-lenis-prevent>
-    <button class="close" aria-label="Fechar">✕</button>
-    <span class="ov-top"></span><h2></h2><span class="ov-stack"></span><p></p><div class="ov-links"></div>
-  </div>
-</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -573,35 +550,26 @@ const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
 /* ---------------- dados (do GitHub) ---------------- */
 const GH = 'https://github.com/ArthurScharfenberger/';
-const projects = [
-  {t:'Yeaax Manager', c:'Desktop · Tauri + React', s:'Tauri 2 (Rust) · React 19 · TypeScript · SQLite · OpenAI', g:'linear-gradient(135deg,#3d5a78,#0b1420)', img:'img/yeaax.webp', st:'on', live:'https://yeaax.xyz', repo:GH+'yeaax-manager', d:'Central local-first para organizar, preparar e agendar conteúdo em vários canais do TikTok e do Instagram. App desktop que roda inteiro no seu computador, com um backend mínimo só para OAuth.'},
-  {t:'BuddyFinance', c:'Mobile · React Native', s:'React Native · Expo SDK 54 · TypeScript · AsyncStorage', g:'linear-gradient(135deg,#1f3b5a,#05080d)', img:'img/buddy.webp', st:'on', live:'https://app-buddy-finance.vercel.app', repo:GH+'App-BuddyFinance', d:'App de finanças pessoais: controle de gastos, analisador ao vivo de Ibovespa, cripto e FIIs, e uma trilha de educação financeira em navegação por abas.'},
-  {t:'Invest System', c:'Full-Stack · Next.js + FastAPI', s:'Next.js · TypeScript · FastAPI · Python', g:'linear-gradient(135deg,#5b6448,#151812)', img:'img/anime/invest.webp', alt:'Ilustração: olho vermelho da Legião', st:'off', live:null, repo:GH+'AnaliseMercadoFinanceiro', d:'Painel de mercado com dados da B3, dos EUA e de cripto (BRAPI, Stooq e CoinGecko), com Daily Brief e filtros por mercado.'},
-  {t:'Arena Quiz Gamer', c:'Web · IA generativa', s:'JavaScript · Node.js · Groq API · LocalStorage', g:'linear-gradient(135deg,#3a1b52,#0d0612)', img:'img/quiz.webp', st:'on', live:'https://jogo-quizz.vercel.app', repo:GH+'Jogo-Quizz', d:'Jogo de quiz mobile-first com modo solo e duelo 1v1, ranking local e perguntas geradas por IA via Groq, com fallback offline.'},
-  {t:'TechFix', c:'Sistema · TypeScript + Java', s:'TypeScript · Vite · Java · JUnit', g:'linear-gradient(135deg,#6b1a26,#160609)', img:'img/anime/techfix.webp', alt:'Ilustração: Juggernaut', st:'code', live:null, repo:GH+'TechFix-Assistencia-Tecnica', d:'Sistema para assistência técnica: clientes, equipamentos, ordens de serviço, reparos, dashboard e relatórios com exportação CSV.'},
-  {t:'Cofre Secreto', c:'Front-end · Interação', s:'HTML · CSS · JavaScript', g:'linear-gradient(135deg,#123a4a,#060d12)', img:'img/cofre.webp', st:'on', live:'https://interactive-secret-vault.vercel.app', repo:GH+'interactive-secret-vault', d:'Cofre digital interativo com teclado numérico, bloqueio após 3 erros, enigmas em etapas e animações de porta, sirene e chuva de dinheiro.'},
+const featured = [
+  {t:'Guido Café & Co.', c:'Cafeteria · Canoas, RS', url:'https://guido-cafe.vercel.app', img:'img/destaques/guido.webp', d:'Microtorrefação e cafeteria: identidade editorial em azul, tipografia serifada e um tom de conversa que convida a ficar.'},
+  {t:'Corujões', c:'Atlética · ULBRA', url:'https://corujoes-site.vercel.app', img:'img/destaques/corujoes.webp', d:'Site da atlética A.A.S.U.C.: mascote em destaque, faixas em movimento, modalidades, loja e chamada para entrar no bando.'},
+  {t:'Vacafé', c:'Armazém & gastrobar · Esteio, RS', url:'https://va-cafe.vercel.app', img:'img/destaques/vacafe.webp', d:'Hero editorial em verde-sálvia com foto em tela cheia, cardápio, momentos e onde encontrar a casa.'},
+  {t:'Café da Esquina', c:'Cafeteria', url:'https://site-cafe-da-esquina.vercel.app', img:'img/destaques/cafe-esquina.webp', d:'Cafeteria de esquina com toque artesanal: foto de ambiente, sobre, cardápio e contato.'},
 ];
-const STATUS = { on:['', 'OPERACIONAL'], off:['off', 'OFFLINE'], code:['code', 'SÓ CÓDIGO'] };
 const ops = [
-  {t:'Bot WhatsApp', y:'Node.js · 2025', g:projects[0].g, href:GH+'bot-whatsapp'},
-  {t:'Site Primuss', y:'Next.js · 2025', g:projects[2].g, href:GH+'Primuss-site'},
-  {t:'Dashboard de Vendas', y:'Power BI · 2025', g:projects[4].g, href:GH+'TrabalhoDashboardBI'},
-  {t:'Café da Esquina', y:'HTML/CSS · 2026', g:'url(img/cafe.webp) center/cover', href:'https://site-cafe-da-esquina.vercel.app'},
+  {t:'Bot WhatsApp', y:'Node.js · 2025', g:'linear-gradient(135deg,#3d5a78,#0b1420)', href:GH+'bot-whatsapp'},
+  {t:'Site Primuss', y:'Next.js · 2025', g:'linear-gradient(135deg,#5b6448,#151812)', href:GH+'Primuss-site'},
+  {t:'Dashboard de Vendas', y:'Power BI · 2025', g:'linear-gradient(135deg,#6b1a26,#160609)', href:GH+'TrabalhoDashboardBI'},
 ];
 
 /* ---------------- montar DOM ---------------- */
-$('#hTrack').innerHTML = projects.map((p, i) => {
-  const [cls, label] = STATUS[p.st];
-  return `<article class="proj" data-i="${i}">
-    <div class="card" data-cursor="BRIEFING">
-      <i class="corner tl"></i><i class="corner br"></i>
-      <div class="bar"><span>MISSÃO ${String(i + 1).padStart(2, '0')}</span><span class="st ${cls}"><i></i>${label}</span></div>
-      <div class="media"><div class="img" style="--g:${p.g}">${p.img ? `<img src="${p.img}" alt="${p.alt || 'Tela do ' + p.t}" loading="lazy">` : `<span class="glyph">${String(i + 1).padStart(2, '0')}</span>`}</div></div>
-      <div class="glare"></div>
-      <div class="meta"><h3>${p.t}</h3><span>${p.c}</span></div>
-    </div>
-  </article>`;
-}).join('');
+$('#fgrid').innerHTML = featured.map((f, i) => `<a class="fcard" href="${f.url}" target="_blank" rel="noopener" data-cursor="ABRIR SITE">
+    <i class="corner tl"></i><i class="corner br"></i>
+    <div class="bar"><span>DESTAQUE ${String(i + 1).padStart(2, '0')}</span><span class="st"><i></i>NO AR</span></div>
+    <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span>${f.url.replace('https://', '')}</span></div>
+    <div class="shot-f"><img src="${f.img}" alt="Página inicial do site ${f.t}" loading="lazy" decoding="async" width="1440" height="900"></div>
+    <div class="meta"><div><h3>${f.t}</h3><span class="cat">${f.c}</span><p>${f.d}</p></div><span class="go">Ver site ↗</span></div>
+  </a>`).join('');
 $('#opsList').innerHTML = ops.map((o, i) => `<li data-g="${o.g}"><a href="${o.href}" target="_blank" rel="noopener"><span class="n">OP-${String(i + 1).padStart(2, '0')}</span><h4>${o.t}</h4><span class="t">${o.y}</span><span class="ar">→</span></a></li>`).join('');
 $('#marquee').innerHTML = '<span>Setor 86 <b>✦</b> Full-Stack <b>✦</b> Inteligência Artificial <b>✦</b> Produtos reais <b>✦</b> Para-RAID online <b>✦</b> </span>'.repeat(6);
 
@@ -654,29 +622,33 @@ $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
 function makePetals(cv, count, big = 1){
   const ctx = cv.getContext('2d');
   let W = 0, H = 0, color = '#d1203a', mx = 0, visible = true;
-  const resize = () => { const d = Math.min(devicePixelRatio, 2); W = cv.clientWidth; H = cv.clientHeight; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); };
-  resize(); addEventListener('resize', resize);
+  const resize = () => { const d = Math.min(devicePixelRatio, 1.5); W = cv.clientWidth; H = cv.clientHeight; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); };
+  resize(); let rT; addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(resize, 150); });
   const spawn = init => ({ x: Math.random() * W, y: init ? Math.random() * H : -20, s: (5 + Math.random() * 8) * big, vy: .35 + Math.random() * .7, vx: -.15 + Math.random() * .3, r: Math.random() * 6.28, vr: (Math.random() - .5) * .03, sw: Math.random() * 6.28, a: .25 + Math.random() * .45 });
   const P = Array.from({ length: innerWidth < 700 ? Math.round(count / 2) : count }, () => spawn(true));
-  addEventListener('pointermove', e => mx = e.clientX / innerWidth - .5);
+  addEventListener('pointermove', e => mx = e.clientX / innerWidth - .5, { passive: true });
   new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(cv);
+  const d0 = () => Math.min(devicePixelRatio, 1.5);
   const draw = () => {
+    const d = d0();
+    ctx.setTransform(d, 0, 0, d, 0, 0);
     ctx.clearRect(0, 0, W, H);
     ctx.fillStyle = color;
     for (const p of P){
       p.sw += .02; p.x += p.vx + Math.sin(p.sw) * .45 + mx * .9; p.y += p.vy; p.r += p.vr;
       if (p.y > H + 20 || p.x < -40 || p.x > W + 40) Object.assign(p, spawn(false));
-      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.globalAlpha = p.a;
+      const c = Math.cos(p.r) * d, sn = Math.sin(p.r) * d;
+      ctx.setTransform(c, sn, -sn, c, p.x * d, p.y * d); ctx.globalAlpha = p.a;
       ctx.beginPath(); ctx.moveTo(-p.s, 0); ctx.quadraticCurveTo(0, -p.s * .45, p.s, 0); ctx.quadraticCurveTo(0, p.s * .12, -p.s, 0); ctx.fill();
-      ctx.restore();
     }
+    ctx.globalAlpha = 1;
   };
   const read = () => color = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
   read();
-  if (RM) draw(); else gsap.ticker.add(() => visible && draw());
+  if (RM) draw(); else gsap.ticker.add(() => visible && !document.hidden && draw());
   return { read };
 }
-const petalLayers = [makePetals($('#petals'), 38), makePetals($('#petals2'), 64, 1.3)];
+const petalLayers = [makePetals($('#petals'), 22), makePetals($('#petals2'), 30, 1.3)];
 const petals = { read: () => petalLayers.forEach(p => p.read()) };
 
 /* ---------------- cursor de mira ---------------- */
@@ -775,15 +747,17 @@ addEventListener('scroll', navSolid, { passive: true }); lenis && lenis.on('scro
 gsap.to('.ghost86', { yPercent: -25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
 (() => { // faixa com velocidade
-  const track = $('#marquee'); let x = 0, dir = -1, vel = 0;
+  const track = $('#marquee'); let x = 0, dir = -1, vel = 0, half = 1, on = true;
+  const measure = () => half = track.scrollWidth / 2 || 1; measure();
+  new ResizeObserver(measure).observe(track);
+  new IntersectionObserver(([e]) => on = e.isIntersecting).observe(track.parentNode);
   if (lenis) lenis.on('scroll', e => { vel = e.velocity; if (e.direction) dir = -e.direction; });
   gsap.ticker.add((t, dt) => {
-    if (RM) return;
-    const half = track.scrollWidth / 2;
+    if (RM || !on) return;
     x += dir * (0.04 * dt + Math.min(Math.abs(vel), 40) * 0.25);
     vel *= 0.9;
     if (x <= -half) x += half; if (x > 0) x -= half;
-    gsap.set(track, { x });
+    track.style.transform = `translate3d(${x}px,0,0)`;
   });
 })();
 
@@ -801,38 +775,17 @@ $$('.sec-head').forEach(h => gsap.from(h.children, { y: 24, opacity: 0, duration
 $$('.contact .split').forEach(line => gsap.from($$('.char', line), { yPercent: 110, duration: .9, ease: 'expo.out', stagger: .02, scrollTrigger: { trigger: line, start: 'top 88%' } }));
 gsap.from('.pill', { y: 20, opacity: 0, stagger: .03, duration: .6, ease: 'back.out(1.7)', scrollTrigger: { trigger: '.pills', start: 'top 88%' } });
 gsap.from('.radar', { scale: 0, duration: 1, ease: 'elastic.out(1,.55)', scrollTrigger: { trigger: '.radar', start: 'top 92%' } });
+gsap.from('.fcard', { y: 40, opacity: 0, duration: .8, ease: 'power3.out', stagger: .1, scrollTrigger: { trigger: '#fgrid', start: 'top 85%' } });
 gsap.from('.ops li', { opacity: 0, y: 16, stagger: .07, duration: .6, ease: 'power3.out', scrollTrigger: { trigger: '#opsList', start: 'top 85%' } });
-
-const mm = gsap.matchMedia();
-mm.add('(min-width: 821px)', () => {
-  const track = $('#hTrack');
-  const dist = () => Math.max(0, track.scrollWidth - innerWidth);
-  const h = gsap.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '.work', start: 'top top', pin: true, scrub: .6, end: () => '+=' + dist(), invalidateOnRefresh: true } });
-  $$('.proj').forEach(p => {
-    gsap.to($('.media', p), { clipPath: 'inset(0% 0% 0% 0%)', ease: 'power2.out', scrollTrigger: { trigger: p, containerAnimation: h, start: 'left 100%', end: 'left 55%', scrub: true } });
-    gsap.fromTo($('.img', p), { xPercent: -4 }, { xPercent: 4, ease: 'none', scrollTrigger: { trigger: p, containerAnimation: h, start: 'left right', end: 'right left', scrub: true } });
-  });
-});
-mm.add('(max-width: 820px)', () => {
-  $$('.proj').forEach(p => gsap.to($('.media', p), { clipPath: 'inset(0% 0% 0% 0%)', ease: 'power2.out', scrollTrigger: { trigger: p, start: 'top 92%', end: 'top 50%', scrub: true } }));
-});
-
-$$('.proj .card').forEach(card => {
-  const rx = gsap.quickTo(card, 'rotationX', { duration: .6, ease: 'power3' }), ry = gsap.quickTo(card, 'rotationY', { duration: .6, ease: 'power3' });
-  card.addEventListener('pointermove', e => {
-    const r = card.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
-    rx((.5 - py) * 8); ry((px - .5) * 8);
-    card.style.setProperty('--gx', px * 100 + '%'); card.style.setProperty('--gy', py * 100 + '%');
-  });
-  card.addEventListener('pointerleave', () => { rx(0); ry(0); });
-});
 
 const scards = $$('.scard');
 scards.forEach((c, i) => {
   if (i === scards.length - 1) return;
   // só escurece quando o próximo cartão já está cobrindo este
   const stickTop = 96 + 16 * (i + 1);
-  gsap.to(c, { scale: .94, filter: 'brightness(.5)', ease: 'none', scrollTrigger: { trigger: scards[i + 1], start: () => `top ${stickTop + c.offsetHeight * .6}px`, end: `top ${stickTop}px`, scrub: true, invalidateOnRefresh: true } });
+  const dim = document.createElement('i'); dim.className = 'dim'; c.append(dim);
+  const st = { trigger: scards[i + 1], start: () => `top ${stickTop + c.offsetHeight * .6}px`, end: `top ${stickTop}px`, scrub: true, invalidateOnRefresh: true };
+  gsap.timeline({ scrollTrigger: st }).to(c, { scale: .94, ease: 'none' }, 0).to(dim, { opacity: .5, ease: 'none' }, 0);
 });
 
 (() => { // prévia que segue o cursor
@@ -859,41 +812,6 @@ scards.forEach((c, i) => {
   list.addEventListener('pointerleave', () => setTimeout(sync));
 })();
 
-/* ---------------- briefing (card vira tela cheia) ---------------- */
-(() => {
-  const ov = $('#overlay'), top = $('.ov-top', ov), h2 = $('h2', ov), p = $('p', ov), close = $('.close', ov), stack = $('.ov-stack', ov), links = $('.ov-links', ov);
-  let fromRect = null, open = false;
-  $$('.proj').forEach(el => $('.card', el).addEventListener('click', () => {
-    const i = +el.dataset.i, d = projects[i], card = $('.media', el);
-    gsap.set($('.card', el), { rotationX: 0, rotationY: 0 }); // mede sem a inclinação do hover
-    fromRect = card.getBoundingClientRect();
-    ov.style.setProperty('--g', d.g);
-    ov.style.background = d.img ? `linear-gradient(to top, rgba(6,7,6,.95) 32%, rgba(6,7,6,.45)), url(${d.img}) center top / cover` : '';
-    top.innerHTML = `BRIEFING · MISSÃO ${String(i + 1).padStart(2, '0')} · <b class="${STATUS[d.st][0]}">${STATUS[d.st][1]}</b>`;
-    h2.textContent = d.t; p.textContent = d.d; stack.textContent = d.s;
-    links.innerHTML = (d.live ? `<a href="${d.live}" target="_blank" rel="noopener">Ver ao vivo ↗</a>` : '') + `<a href="${d.repo}" target="_blank" rel="noopener">Código no GitHub ↗</a>`;
-    const chars = splitChars(h2);
-    lenis && lenis.stop(); open = true;
-    gsap.timeline()
-      .set(ov, { display: 'block', top: fromRect.top, left: fromRect.left, width: fromRect.width, height: fromRect.height })
-      .to(ov, { top: 0, left: 0, width: innerWidth, height: innerHeight, duration: .9, ease: 'expo.inOut' })
-      .to(top, { opacity: 1, duration: .3 }, '-=.25')
-      .from(chars, { yPercent: 110, duration: .8, ease: 'expo.out', stagger: .02 }, '<')
-      .to([stack, p, links], { opacity: 1, duration: .5, stagger: .07 }, '-=.5')
-      .to(close, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(2)' }, '<');
-    setTimeout(() => close.focus(), 900);
-  }));
-  const shut = () => {
-    if (!open) return; open = false;
-    const r = fromRect;
-    gsap.timeline({ onComplete: () => { gsap.set(ov, { display: 'none' }); gsap.set([close, p, stack, links, top], { clearProps: 'all' }); lenis && lenis.start(); } })
-      .to([close, p, stack, links, top], { opacity: 0, duration: .25 })
-      .to($$('.char', h2), { yPercent: -110, duration: .35, ease: 'power3.in', stagger: .01 }, '<')
-      .to(ov, { top: r.top, left: r.left, width: r.width, height: r.height, duration: .8, ease: 'expo.inOut' });
-  };
-  close.addEventListener('click', shut);
-  addEventListener('keydown', e => e.key === 'Escape' && shut());
-})();
 
 /* ---------------- tema: Setor 86 ↔ República ---------------- */
 $('#themeBtn').addEventListener('click', e => {
@@ -916,17 +834,19 @@ $('#themeBtn').addEventListener('click', e => {
   const track = $('#film');
   const shots = Array.from({ length: 10 }, (_, i) => `<figure class="shot"><img src="img/anime/film-${String(i + 1).padStart(2, '0')}.webp" alt="" loading="lazy" width="640" height="360"><span>REG-${String(i + 1).padStart(2, '0')}</span></figure>`).join('');
   track.innerHTML = shots + shots; // duplicado para o loop não ter emenda
-  let x = 0, vel = 0, hover = false;
+  let x = 0, vel = 0, hover = false, half = 1, on = false;
+  const measure = () => half = track.scrollWidth / 2 || 1; measure();
+  new ResizeObserver(measure).observe(track);
+  new IntersectionObserver(([e]) => on = e.isIntersecting).observe(track.parentNode);
   track.addEventListener('pointerenter', () => hover = true);
   track.addEventListener('pointerleave', () => hover = false);
   if (lenis) lenis.on('scroll', e => { vel = e.velocity; });
   gsap.ticker.add((t, dt) => {
-    if (RM) return;
-    const half = track.scrollWidth / 2;
+    if (RM || !on) return;
     x += (hover ? 0.008 : 0.035) * dt + Math.min(Math.abs(vel), 40) * 0.3;
     vel *= 0.9;
     if (x >= half) x -= half;
-    gsap.set(track, { x: x - half });
+    track.style.transform = `translate3d(${x - half}px,0,0)`;
   });
 })();
 
