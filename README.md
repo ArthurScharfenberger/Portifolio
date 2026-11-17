@@ -104,31 +104,6 @@ Portifolio/
 
 ---
 
-## 🚀 Rodando localmente
-
-Não precisa instalar nada. Clone e abra o `index.html` no navegador:
-
-```bash
-git clone https://github.com/ArthurScharfenberger/Portifolio.git
-cd Portifolio
-```
-
-Para testar como fica em produção, sirva a pasta com um servidor local:
-
-```bash
-npx serve .
-```
-
-### Adicionando um novo destaque
-
-Os cards são gerados a partir do array `featured` no `index.html`. Para incluir um site novo, coloque o print em `img/destaques/` (WebP, 1440 px de largura) e adicione um item:
-
-```js
-{ t: 'Nome do projeto', c: 'Categoria · Cidade', url: 'https://...', img: 'img/destaques/arquivo.webp', d: 'Descrição curta.' }
-```
-
----
-
 <div align="center">
 
 <sub>Arte de <i>86 –Eighty Six–</i> © Asato Asato/KADOKAWA/Project-86 · uso sem fins comerciais, apenas como tema do portfólio.</sub>
